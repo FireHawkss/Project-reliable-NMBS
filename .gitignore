@@ -20,8 +20,7 @@ parts/
 sdist/
 var/
 wheels/
-gfts_processing/
-gfts_processing/Scripts/
+gtfs_processing/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
