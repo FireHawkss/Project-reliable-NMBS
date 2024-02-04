@@ -21,6 +21,7 @@ sdist/
 var/
 wheels/
 gfts_processing/
+gfts_processing/Scripts/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
