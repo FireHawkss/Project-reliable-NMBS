@@ -1,6 +1,8 @@
-from gtfslib.dao import Dao
-# If db.sqlite exists, use it. Otherwise create a new one.
-dao = Dao("data.sqlite")
+from gtfs_functions import Feed
 
-dao.load_gtfs("rail-tramizmir-gtfs.zip")
+gtfs_path = 'rail-tramizmir-gtfs.zip'
 
+feed = Feed(gtfs_path, time_windows=[0, 6, 10, 12, 16, 19, 24])
+
+routes = feed.routes
+routes.head(2)
