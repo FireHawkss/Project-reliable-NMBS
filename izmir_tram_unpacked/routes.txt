@@ -1,0 +1,5 @@
+route_id,agency_id,route_long_name,route_short_name,route_desc,route_type,route_url,route_color,route_text_color
+1,TRAM,Fahrettin Altay - Halkapınar,,,0,,,
+2,TRAM,Halkapınar - Fahrettin Altay,,,0,,,
+3,TRAM,Alaybey - Ataşehir,,,0,,,
+4,TRAM,Ataşehir - Alaybey,,,0,,,
