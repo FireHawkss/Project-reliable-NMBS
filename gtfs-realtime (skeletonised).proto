@@ -1,0 +1,194 @@
+// FeedMessage
+// ├── FeedHeader
+// │   └── Incrementality
+// └── FeedEntity
+//     ├── TripUpdate
+//     │   ├── TripDescriptor
+//     │   ├── VehicleDescriptor
+//     │   ├── StopTimeUpdate
+//     │   │   ├── StopTimeEvent (arrival)
+//     │   │   ├── StopTimeEvent (departure)
+//     │   │   ├── VehiclePosition.OccupancyStatus
+//     │   │   ├── ScheduleRelationship
+//     │   │   └── StopTimeProperties
+//     │   └── TripProperties
+//     ├── VehiclePosition
+//     │   ├── TripDescriptor
+//     │   ├── VehicleDescriptor
+//     │   ├── Position
+//     │   ├── VehicleStopStatus
+//     │   ├── CongestionLevel
+//     │   ├── OccupancyStatus
+//     │   └── CarriageDetails
+//     │       └── OccupancyStatus
+//     ├── Alert
+//     │   ├── TimeRange
+//     │   ├── EntitySelector
+//     │   │   └── TripDescriptor
+//     │   ├── Cause
+//     │   ├── Effect
+//     │   ├── TranslatedString (for url, header_text, description_text, tts_header_text, tts_description_text, cause_detail, effect_detail)
+//     │   │   └── Translation
+//     │   ├── SeverityLevel
+//     │   ├── TranslatedImage
+//     │   │   └── LocalizedImage
+//     │   └── TranslatedString (for image_alternative_text)
+//     │       └── Translation
+//     └── Shape
+
+syntax = "proto2";
+option java_package = "com.google.transit.realtime";
+package transit_realtime;
+
+message FeedMessage {
+  required FeedHeader header = 1;
+  repeated FeedEntity entity = 2;
+}
+
+message FeedHeader {
+  enum Incrementality {
+  }
+  optional Incrementality incrementality = 2 [default = FULL_DATASET];
+}
+
+message FeedEntity {
+  optional TripUpdate trip_update = 3;
+  optional VehiclePosition vehicle = 4;
+  optional Alert alert = 5;
+  optional Shape shape = 6;
+}
+
+message TripUpdate {
+  required TripDescriptor trip = 1;
+  optional VehicleDescriptor vehicle = 3;
+
+  message StopTimeEvent {
+  }
+
+  message StopTimeUpdate {
+    optional StopTimeEvent arrival = 2;
+    optional StopTimeEvent departure = 3;
+    optional VehiclePosition.OccupancyStatus departure_occupancy_status = 7;
+
+    enum ScheduleRelationship {
+    }
+
+    optional ScheduleRelationship schedule_relationship = 5 [default = SCHEDULED];
+
+    message StopTimeProperties {
+    }
+
+    optional StopTimeProperties stop_time_properties = 6;
+  }
+
+  repeated StopTimeUpdate stop_time_update = 2;
+
+  message TripProperties {
+  }
+
+  optional TripProperties trip_properties = 6;
+
+}
+
+message VehiclePosition {
+  optional TripDescriptor trip = 1;
+  optional VehicleDescriptor vehicle = 8;
+  optional Position position = 2;
+
+  enum VehicleStopStatus {
+  }
+
+  optional VehicleStopStatus current_status = 4 [default = IN_TRANSIT_TO];
+
+  enum CongestionLevel {
+  }
+
+  optional CongestionLevel congestion_level = 6;
+
+  enum OccupancyStatus {
+  }
+
+  optional OccupancyStatus occupancy_status = 9;
+
+  message CarriageDetails {
+    optional OccupancyStatus occupancy_status = 3 [default = NO_DATA_AVAILABLE];
+  }
+
+  repeated CarriageDetails multi_carriage_details = 11;
+}
+
+message Alert {
+  repeated TimeRange active_period = 1;
+  repeated EntitySelector informed_entity = 5;
+
+  enum Cause {
+  }
+
+  optional Cause cause = 6 [default = UNKNOWN_CAUSE];
+
+  enum Effect {
+  }
+
+  optional Effect effect = 7 [default = UNKNOWN_EFFECT];
+  optional TranslatedString url = 8;
+  optional TranslatedString header_text = 10;
+  optional TranslatedString description_text = 11;
+  optional TranslatedString tts_header_text = 12;
+  optional TranslatedString tts_description_text = 13;
+
+  enum SeverityLevel {
+  }
+
+  optional SeverityLevel severity_level = 14 [default = UNKNOWN_SEVERITY];
+  optional TranslatedImage image = 15; 
+  optional TranslatedString image_alternative_text = 16;
+  optional TranslatedString cause_detail = 17;
+  optional TranslatedString effect_detail = 18;
+
+}
+
+message TimeRange {
+}
+
+message Position {
+}
+
+message TripDescriptor {
+
+  enum ScheduleRelationship {
+  }
+
+  optional ScheduleRelationship schedule_relationship = 4;
+
+}
+
+message VehicleDescriptor {
+
+  enum WheelchairAccessible {
+  }
+
+  optional WheelchairAccessible wheelchair_accessible = 4 [default = NO_VALUE];
+}
+
+message EntitySelector {
+
+  optional TripDescriptor trip = 4;
+}
+
+message TranslatedString {
+  message Translation {
+  }
+
+  repeated Translation translation = 1;
+}
+
+message TranslatedImage {
+  message LocalizedImage {
+  }
+
+  repeated LocalizedImage localized_image = 1;
+}
+
+message Shape {
+}
+
