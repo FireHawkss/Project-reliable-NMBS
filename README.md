@@ -3,6 +3,12 @@ making a website that tracks the punctuality of NMBS trains
 
 The data is gathered from NMBS in realtime and static GTFS and NETEX format. This data is processed and than displayed to the user to simplify the process of checking the reliability of a given train run by the NMBS.
 
+Decisions:
+what to use for databases: PostgreSQL
+lib for processing GTFS static: ?
+lib for processing GTFS realtime: ?
+
+
 -------------HIGH-LEVEL PROJECT OVERVIEW-------------
 the project has several stages of completion with the final stage being the most completed and polished version possible of this projects. 
 
