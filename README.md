@@ -9,6 +9,7 @@ the project has several stages of completion with the final stage being the most
 Stage 1: the Beginning
 plug all the available data (possibly excl. netex) into the program and create databases that store the static and realtime data. Add functionality to do very basic parsing of the received data like list of stations or list of train numbers
 
+
 Stage 2: comprehensive backend
 - link multiple databases to eachother
 - create backend for train info fetching
@@ -17,15 +18,16 @@ Stage 2: comprehensive backend
 - create backend for train composition
 - create backend for Belgian network overview (amount of delayed trains, punctuality, etc.)
 
+
 Stage 3: frontend learning
 Since i have no frontend experience and the langauges used for the developing of such interfaces are foreign to me, an inital "discovery" phase will be necessary. In this phase, decisions will be taken to determine which frameworks and languages will be used to create the eventual website. Mini-projects that are not necessarily related to this project might be created for learning purposes.
+
 
 Stage 4: basic frontend implementation
 The lessons learned from Stage 3 will be implemted to transform this project from backend only to a nice website. If possible, attention should be given to the ease of use on mobile devices as well.
 
 - create main page
 - decide on and add general navigational layout (tab system with a column on the left side? or something else?)
-
 
 
 Stage 5: final stage (fully completed project)
