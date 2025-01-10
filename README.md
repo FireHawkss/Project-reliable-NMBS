@@ -26,7 +26,7 @@ Stage 2: comprehensive backend
 
 
 Stage 3: frontend learning
-Since i have no frontend experience and the langauges used for the developing of such interfaces are foreign to me, an inital "discovery" phase will be necessary. In this phase, decisions will be taken to determine which frameworks and languages will be used to create the eventual website. Mini-projects that are not necessarily related to this project might be created for learning purposes.
+Since I have no frontend experience and the langauges used for the developing of such interfaces are foreign to me, an inital "discovery" phase will be necessary. In this phase, decisions will be taken to determine which frameworks and languages will be used to create the eventual website. Mini-projects that are not necessarily related to this project might be created for learning purposes.
 
 
 Stage 4: basic frontend implementation
@@ -39,7 +39,7 @@ The lessons learned from Stage 3 will be implemted to transform this project fro
 Stage 5: final stage (fully completed project)
 --> project in a nutshell: similar to zugfinder but for belgian trains and looks better
 
---> elaborated: the projects is made of 2 halved the frontend and the backend. The backend will be the inital focus and will be coded in python. It will gather the data provided by NMBS and process it into local databases (eg. using SQL). It will also process the data to feed it into the frontend (eg. train positions, station information, etc.). The frontend is a website that presents the gathered data and the aquired insights by data processing (backend). The presentation will be visiually appealing (better than the barebones UI approach of zugfinder). A possible list of possible fuctionalities on the website include: 
+--> elaborated: the projects is made of 2 halves, the frontend and the backend. The backend will be the inital focus and will be coded in python. It will gather the data provided by NMBS and process it into local databases (eg. using SQL). It will also process the data to feed it into the frontend (eg. train positions, station information, etc.). The frontend is a website that presents the gathered data and the aquired insights by data processing (backend). The presentation will be visiually appealing (better than the barebones UI approach of zugfinder). A possible list of possible fuctionalities on the website include: 
 
 Tab stations:
 - list of stations
@@ -47,7 +47,7 @@ Tab stations:
 
 Tab trains:
 - a search bar for trains using train numbers and/or departure + arrival stations that shows the trajectory of the train (which stations it serves and when)
-- a visualisation of the path the train takes from start to finish on the map
+- a visualisation of the path the train takes from start to finish on the map (Path for a single trajectory --> with brouter?)
 - a visualisation using graphs, tables, etc. showing how often the selected train is late (between 2 specified stations) + further insights (eg. a graph of the amount of late trains over time)
 - a visualisation of the current train composition
 
