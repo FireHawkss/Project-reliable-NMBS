@@ -8,6 +8,8 @@ what to use for databases: PostgreSQL
 lib for processing GTFS static: ?
 lib for processing GTFS realtime: ?
 
+Note: Maybe train an AI moddel to predict delay using the info learned at machine learning course. Possible features: Date and Time, temperature, Weather (raining? snowing?), train type?, etc.
+
 
 -------------HIGH-LEVEL PROJECT OVERVIEW-------------
 the project has several stages of completion with the final stage being the most completed and polished version possible of this projects. 
